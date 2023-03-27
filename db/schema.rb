@@ -10,9 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_27_101109) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_27_115431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "motos", force: :cascade do |t|
+    t.text "description"
+    t.float "price"
+    t.string "brand"
+    t.string "color"
+    t.integer "year"
+    t.integer "mileage"
+    t.datetime "status"
+    t.string "photo"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_motos_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.bigint "user_id", null: false
+    t.bigint "moto_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["moto_id"], name: "index_reservations_on_moto_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rating"
+    t.bigint "user_id", null: false
+    t.bigint "moto_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["moto_id"], name: "index_reviews_on_moto_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +63,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_101109) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "motos", "users"
+  add_foreign_key "reservations", "motos"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "motos"
+  add_foreign_key "reviews", "users"
 end
