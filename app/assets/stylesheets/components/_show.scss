@@ -1,0 +1,34 @@
+.first-div{
+  border: 1px solid rgb(178, 176, 176);
+  border-radius: 15px;
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+  img{
+    height: 90px;
+    width: 90px;
+  }
+  .second-div{
+    width: 40%;
+    padding: 30px;
+    .img-moto{
+      background-color: white;
+      padding: 10px;
+    }
+    .style{
+      background-color: white;
+      padding: 10px;
+      border-bottom: solid 1px rgb(178, 176, 176);
+    }
+  }
+  .third-div{
+    width: 40%;
+    padding-top: 80px;
+    padding-right: 30px;
+    .space{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}
