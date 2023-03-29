@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <h1><%= @moto.title %></h1>
+    <h1><%= @moto.description %></h1>
+
+    <div>
+      <img src="" alt="">
+      <h2>model</h2>
+    </div>
+    <h1> Depart & retour</h1>
+    <div>
+      <div>
+        <h4>Départ</h4>
+        <h3>Lyon Part Dieu Gare</h3>
+        <h4>2023-03-28 - 15:00</h4>
+      </div>
+      <div>
+        <h4>Retour</h4>
+        <h3>Lyon Part Dieu Gare</h3>
+        <h4>2023-03-29 - 20:00</h4>
+      </div>
+    </div>
+  </div>
+  <div>
+
+  </div>
+</div>
+ <%= link_to "Edit", edit_moto_path %>
+ <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } } %>
