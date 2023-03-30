@@ -29,6 +29,17 @@
       display: flex;
       justify-content: space-between;
     }
+    .links{
+      display: flex;
+      .btn-link{
+      border:solid 1px rgb(178, 176, 176) ;
+      border-radius: 5px;
+      text-decoration: none;
+      color: black;
+      padding: 5px 7px;
+      margin: 5px;
+    }
+    }
   }
 
 }

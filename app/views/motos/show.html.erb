@@ -38,9 +38,9 @@
       <p>Color</p>
       <p><%= @moto.color %></p>
     </div>
-    <div>
-      <%= link_to "Edit", edit_moto_path %>
-      <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } } %>
+    <div class="links">
+      <%= link_to "Edit", edit_moto_path, class:"btn-link" %>
+      <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class:"btn-link" %>
     </div>
   </div>
 </div>
