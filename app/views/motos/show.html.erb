@@ -1,33 +1,51 @@
-<div>
-  <div>
-    <h1><%= @moto.title %></h1>
-    <h1><%= @moto.description %></h1>
-
-    <div>
-      <img src="" alt="">
-      <h2>model</h2>
+<div class="first-div">
+  <div class="second-div">
+    <h3>Vehicule</h3>
+    <div class="img-moto">
+      <img src="https://www.moto-honda.re/publicmedia/formatted/116/76/fr/X-ADV-Gris-mat.jpg;h=486,w=864.jpg" alt="">
+      <h4><%= @moto.title %></h4>
     </div>
-    <h1> Depart & retour</h1>
+    <br>
+    <h3> Depart & retour</h3>
+    <br>
     <div>
-      <div>
-        <h4>Départ</h4>
-        <h3>Lyon Part Dieu Gare</h3>
-        <h4>2023-03-28 - 15:00</h4>
+      <div class="style">
+        <p>Départ</p>
+        <p>Lyon Part Dieu Gare</p>
+        <p>2023-03-28 - 15:00</p>
       </div>
-      <div>
-        <h4>Retour</h4>
-        <h3>Lyon Part Dieu Gare</h3>
-        <h4>2023-03-29 - 20:00</h4>
+      <div class="style">
+        <p>Retour</p>
+        <p>Lyon Part Dieu Gare</p>
+        <p>2023-03-29 - 20:00</p>
       </div>
     </div>
   </div>
-  <div>
-
+  <div class="third-div">
+    <div class="space">
+      <p>Price</p>
+      <p><%= @moto.price %> Mad</p>
+    </div>
+    <div class="space">
+      <p>Mileage</p>
+      <p><%= @moto.mileage %> Km</p>
+    </div>
+    <div class="space">
+      <p>Model</p>
+      <p><%= @moto.year %></p>
+    </div>
+    <div class="space">
+      <p>Color</p>
+      <p><%= @moto.color %></p>
+    </div>
+    <div class="links">
+      <% if policy(@moto).edit? %>
+        <%= link_to "Edit", edit_moto_path %>
+       <% end %>
+       <% if policy(@moto).destroy? %>
+          <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } } %>
+       <% end %>
+    </div>
   </div>
 </div>
-<% if policy(@moto).edit? %>
- <%= link_to "Edit", edit_moto_path %>
- <% end %>
- <% if policy(@moto).destroy? %>
- <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } } %>
-<% end %>
+
