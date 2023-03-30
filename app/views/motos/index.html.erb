@@ -1,6 +1,6 @@
 <h1>Motos#index</h1>
 <p><% @motos.each do |moto|  %></p>
-<p> <%= moto.title %></p>
+<p> <%=link_to moto.title, moto_path(moto) %></p>
 <p> <%= moto.user.email %></p>
 <% end %>
 <%# <% if policy(Moto).new? %>

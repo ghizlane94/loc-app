@@ -40,12 +40,11 @@
     </div>
     <div class="links">
       <% if policy(@moto).edit? %>
-        <%= link_to "Edit", edit_moto_path %>
+        <%= link_to "Edit", edit_moto_path, class:"btn-link" %>
        <% end %>
        <% if policy(@moto).destroy? %>
-          <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } } %>
+          <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class:"btn-link" %>
        <% end %>
     </div>
   </div>
 </div>
-
