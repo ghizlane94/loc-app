@@ -1,6 +1,6 @@
 class MotosController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :set_moto, only: %i[show edit update delete]
+  before_action :set_moto, only: %i[show edit update destroy]
   def index
     @motos = policy_scope(Moto)
   end
