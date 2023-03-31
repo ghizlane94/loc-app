@@ -52,5 +52,11 @@
   #inputs{
     display: flex;
     flex-direction: column;
+    width: 40%;
+    input{
+      padding: 7px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
