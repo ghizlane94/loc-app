@@ -1,9 +1,12 @@
 
-<div>
+<div >
 
 <p><% @motos.each do |moto|  %></p>
-<p> <%=link_to moto.title, moto_path(moto) %></p>
-<p> <%= moto.user.email %></p>
+<label><%=moto.title%></label>
+<p><%= moto.description %></p>
+<p><%= moto.photo %></p>
+<p><%= moto.year %></p>
+
 <% end %>
 <%# <% if policy(Moto).new? %>
  <%= link_to "Create moto", new_moto_path %>
