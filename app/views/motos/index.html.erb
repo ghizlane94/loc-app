@@ -1,12 +1,18 @@
 
-<div>
 
-<p><% @motos.each do |moto|  %></p>
-<p> <%=link_to moto.title, moto_path(moto) %></p>
-<p> <%= moto.user.email %></p>
-<% end %>
+<div id="moto_index" class="moto-container">
+  <% @motos.each do |moto| %>
+    <div>
+      <%= image_tag moto.image_url, class: "moto-image" %>
+      <div class="moto-title"><%= moto.title %></div>
+      <div class="moto-description"><%= moto.description %></div>
+      <div class="moto-year">Year: <%= moto.year %></div>
+    </div>
+  <% end %>
+</div>
+
+
+
 <%# <% if policy(Moto).new? %>
  <%= link_to "Create moto", new_moto_path %>
 <%# <% end %>
-
-</div>

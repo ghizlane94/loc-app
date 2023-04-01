@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "destroying motos"
+puts "destroying motos "
 Moto.destroy_all
 puts "destroting users"
 User.destroy_all
@@ -55,7 +55,7 @@ moto1 = Moto.create!(
   color: "Black",
   year: 2018,
   mileage: 5000,
-  photo: "https://example.com/bike.jpg",
+  image_url: "https://cdp.azureedge.net/products/USA/HD/2021/MC/CRUISER/STREET_BOB_114/50/VIVID_BLACK/2000000013.jpg",
   title: "Harley-Davidson Street Bob",
   city: "New York"
 )
@@ -68,7 +68,7 @@ moto2 = Moto.create!(
   color: "Red",
   year: 2020,
   mileage: 1000,
-  photo: "https://example.com/bike2.jpg",
+  image_url: "https://www.hondashop.com.au/wp-content/uploads/2018/06/CB300R-Red-02.jpg",
   title: "Honda CB300R",
   city: "Los Angeles"
 )
@@ -81,6 +81,8 @@ moto3 = Moto.create!(
   color: "Blue",
   year: 2017,
   mileage: 1500.00,
+  image_url: "https://media.motoservices.com/media/cache/facebook_share/media/vehicle/2459/p90402247-highres.jpg",
+  title: "BMW R1200RT",
   city: "Chicago"
 )
 
@@ -92,7 +94,7 @@ moto4 = Moto.create!(
   color: "Yellow",
   year: 2019,
   mileage: 8000,
-  photo: "https://example.com/bike4.jpg",
+  image_url: "https://imgcdn.zigwheels.my/large/gallery/color/58/1197/ducati-monster-821-color-668454.jpg",
   title: "Ducati Monster 821",
   city: "San Francisco"
 )
@@ -105,7 +107,7 @@ moto5 = Moto.create!(
   color: "Silver",
   year: 2015,
   mileage: 1200.00,
-  photo: "https://example.com/bike5.jpg",
+  image_url: "https://cdn1.polaris.com/globalassets/indian/2016/model/vehicle-cards/scout-silver-smoke.jpg?v=53e30dff&format=webp",
   title: "Indian Scout Sixty",
   city: "Miami"
 )

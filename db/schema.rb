@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_28_103931) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_01_113434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,12 +22,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_103931) do
     t.integer "year"
     t.integer "mileage"
     t.datetime "status"
-    t.string "photo"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
     t.string "city"
+    t.string "image_url"
     t.index ["user_id"], name: "index_motos_on_user_id"
   end
 
