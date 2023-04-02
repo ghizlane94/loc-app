@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.banner{
+  width: 819px;
+  height: 550px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  padding: 10px;
+  .label-input{
+    display: flex;
+    flex-direction: column;
+  }
+  .home-submit{
+    background-color: #6B63FF;
+    color:white;
+    margin-top:10px;
+    padding: 5px;
+    border: none;
+
+
+  }
+
+}
