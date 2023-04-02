@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image:url('https://images.unsplash.com/photo-1602947572401-fc347b48f3da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG1vdG9zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60')">
+  <div class="container py-5" >
+    <h3>Vous Cherchez une moto?</h3>
+    <h3>Vous etes au bon endroit</h3>
+    <div class="row bg-white py-3 my-3">
+      <div class= "col-4">
+        <div class= "label-input" >
+          <label for="geo">Départ et lieu de retour</label>
+          <input type="text" id="geo">
+        </div>
+      </div>
+      <div class= "col-4">
+        <div class= "label-input">
+          <label for="start-time">Date et heure:</label>
+          <input type="datetime-local" id="start-time"
+                name="meeting-time" value="2023-06-12T19:30"
+                min="2023-06-07T00:00" max="2023-06-14T00:00">
+        </div>
+      </div>
+      <div class= "col-4">
+        <div class= "label-input">
+          <label for="fin-time">Date et heure:</label>
+          <input type="datetime-local" id="fin-time"
+                name="meeting-time" value="2023-06-12T19:30"
+                min="2023-06-07T00:00" max="2023-06-14T00:00">
+        </div>
+      </div>
+
+      <div >
+      <input type="submit" value="Rechercher"class="home-submit">
+      </div>
+    </div>
+  </div>
+</div>
