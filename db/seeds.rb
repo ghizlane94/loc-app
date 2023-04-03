@@ -94,7 +94,7 @@ moto4 = Moto.create!(
   color: "Yellow",
   year: 2019,
   mileage: 8000,
-  image_url: "https://imgcdn.zigwheels.my/large/gallery/color/58/1197/ducati-monster-821-color-668454.jpg",
+  image_url: "https://moto-station.com/wp-content/uploads/2017/11/02-SCRAMBLER-1100-YELLOW-1-768x513.jpg",
   title: "Ducati Monster 821",
   city: "San Francisco"
 )
