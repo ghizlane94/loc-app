@@ -8,6 +8,7 @@
   img{
     height: 90px;
     width: 90px;
+    border-radius: 10px;
   }
   .second-div{
     width: 40%;
@@ -15,11 +16,13 @@
     .img-moto{
       background-color: rgb(242, 241, 241);
       padding: 10px;
+      border-radius: 10px;
     }
     .style{
       background-color: rgb(242, 241, 241);
       padding: 10px;
       border-bottom: solid 1px rgb(178, 176, 176);
+      border-radius: 10px;
     }
   }
   .third-div{
@@ -32,11 +35,12 @@
     }
     .links{
       display: flex;
+      justify-content: space-between;
       .btn-link{
       border:solid 1px rgb(178, 176, 176) ;
       border-radius: 5px;
       text-decoration: none;
-      color: black;
+      color: white;
       padding: 5px 7px;
       margin: 5px;
       background-color: #6b63ff;
@@ -46,6 +50,18 @@
         font-size: 30px;
         cursor: pointer;
         color: #6b63ff;
+      }
+    }
+    .btn-edit{
+      border: #6b63ff 1px solid;
+      color:#6b63ff;
+      background-color: white;
+      border-radius: 4px;
+      padding: 5px 7px;
+      margin: 5px;
+      &:hover{
+        background-color: #6b63ff;
+        color: white;
       }
     }
   }
