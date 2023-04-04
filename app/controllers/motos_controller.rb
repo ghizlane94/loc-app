@@ -2,7 +2,11 @@ class MotosController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_moto, only: %i[show edit update destroy]
   def index
-    @motos = policy_scope(Moto)
+    if params[:q].present?
+      @motos = policy_scope(Moto.where("LOWER(title) LIKE ?", "%" + params[:q].downcase + "%"))
+    else
+      @motos = policy_scope(Moto.all)
+    end
   end
 
   def show
