@@ -2,7 +2,7 @@
   <div class="second-div">
     <h3>Vehicule</h3>
     <div class="img-moto">
-      <img src="https://www.moto-honda.re/publicmedia/formatted/116/76/fr/X-ADV-Gris-mat.jpg;h=486,w=864.jpg" alt="">
+      <%= image_tag @moto.image_url %>
       <h4><%= @moto.title %></h4>
     </div>
     <br>
@@ -26,26 +26,34 @@
       <p>Price</p>
       <p><%= @moto.price %> Mad</p>
     </div>
+    <hr>
     <div class="space">
       <p>Mileage</p>
       <p><%= @moto.mileage %> Km</p>
     </div>
+    <hr>
     <div class="space">
       <p>Model</p>
       <p><%= @moto.year %></p>
     </div>
+    <hr>
     <div class="space">
       <p>Color</p>
       <p><%= @moto.color %></p>
     </div>
+    <hr>
     <div class="links">
-       <% if policy(@moto).destroy? %>
+      <div>
+        <% if policy(@moto).destroy? %>
           <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class:"btn-link" %>
-       <% end %>
-      <% if policy(@moto).edit? %>
-        <%# <%= link_to "Edit", edit_moto_path, class:"btn-link" %>
-        <i class="fa-solid fa-pen-to-square icone" ></i>
-      <% end %>
+        <% end %>
+      </div>
+      <div>
+        <% if policy(@moto).edit? %>
+          <%# <%= link_to "Edit", edit_moto_path, class:"btn-link" %>
+          <i class="fa-solid fa-pen-to-square icone" ></i>
+        <% end %>
+      </div>
     </div>
     <div>
       <div class="d-none container form" >
@@ -57,7 +65,7 @@
           <%= f.input :mileage %>
           <%= f.input :year %>
           <%= f.input :price %>
-          <%= f.submit %>
+          <%= f.submit 'Update', class: 'btn-edit' %>
         <% end %>
       </div>
     </div>
