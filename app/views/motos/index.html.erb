@@ -18,7 +18,8 @@
               <div class="moto-brand"> <strong>Brand: </strong><%= moto.brand %></div>
               <div class ="moto-mileage"> <strong>Mileage: </strong><%= moto.mileage %> Kilometers</div>
               <div class ="moto-price"> <%= moto.price %> $/day</div>
-              <div class= "select-btn"><button>Select</button></div>
+              <%# <div class= "select-btn"><button>Select</button></div> %>
+              <div class= "select-btn"><%= link_to "Select", moto_path(moto), class:"select" %></div>
           </div>
 
         </div>
