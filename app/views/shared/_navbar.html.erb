@@ -10,9 +10,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+      <form action="<%=motos_path%>" method="get">
           <li class= "btn-margin">
             <div class="search-box">
-              <input type="text" placeholder="Search...">
+              <input type="text" name="q" placeholder="Search...">
               <div class="search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
@@ -21,6 +22,7 @@
               </div>
             </div>
           </li>
+        </form>
           <li class="nav-item">
             <%= link_to "Search", "#", class: "nav-link"  %>
           </li>
