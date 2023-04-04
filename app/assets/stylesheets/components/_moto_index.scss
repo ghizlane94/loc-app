@@ -72,14 +72,15 @@
         right: 0;
         font-size: 20px;
         padding-right: 27px;
-        button {
+        .select {
           background-color:yellow;
           border: none;
           border-radius: 5px;
           color: black;
           width: 126px;
-          padding: 8px;
+          padding: 8px 12px;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          text-decoration: none;
         }
       }
   }
