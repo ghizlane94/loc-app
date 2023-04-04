@@ -4,6 +4,7 @@
   margin: 50px;
   display: flex;
   justify-content: space-between;
+
   img{
     height: 90px;
     width: 90px;
@@ -12,11 +13,11 @@
     width: 40%;
     padding: 30px;
     .img-moto{
-      background-color: white;
+      background-color: rgb(242, 241, 241);
       padding: 10px;
     }
     .style{
-      background-color: white;
+      background-color: rgb(242, 241, 241);
       padding: 10px;
       border-bottom: solid 1px rgb(178, 176, 176);
     }
@@ -38,8 +39,14 @@
       color: black;
       padding: 5px 7px;
       margin: 5px;
+      background-color: #6b63ff;
 
-    }
+      }
+      .icone{
+        font-size: 30px;
+        cursor: pointer;
+        color: #6b63ff;
+      }
     }
   }
 
@@ -59,4 +66,15 @@
       margin-bottom: 10px;
     }
   }
+  .submit{
+    background-color: white;
+    border:#6b63ff 1px solid;
+    color:#6b63ff;
+    &:hover{
+    background-color: #6b63ff;
+    border:none;
+    color:white;
+  }
+  }
+
 }

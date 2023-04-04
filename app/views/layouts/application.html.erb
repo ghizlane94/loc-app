@@ -28,6 +28,13 @@
         searchBox.classList.remove("active");
         cancelBtn.style.visibility="hidden";
       }
+
+      const icone = document.querySelector(".icone");
+      const form = document.querySelector(".form")
+      icone.onclick=(event) => {
+        event.preventDefault();
+        form.classList.remove("d-none");
+      }
     </script>
   </body>
 </html>
