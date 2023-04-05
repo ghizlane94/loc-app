@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :reservations, only: [:index, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :motos
+  # resources :motos
   # Defines the root path route ("/")
   # root "articles#index"
 end
