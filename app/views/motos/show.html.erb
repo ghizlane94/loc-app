@@ -2,7 +2,8 @@
   <div class="second-div">
     <h3>Vehicule</h3>
     <div class="img-moto">
-      <%= image_tag @moto.image_url %>
+      <%# <img src="https://www.moto-honda.re/publicmedia/formatted/116/76/fr/X-ADV-Gris-mat.jpg;h=486,w=864.jpg" alt=""> %>
+      <%= image_tag @moto.image_url, fit: :crop, class: "moto-img" %>
       <h4><%= @moto.title %></h4>
     </div>
     <br>
