@@ -2,9 +2,9 @@
   <div class="container py-5" >
     <h3>Vous Cherchez une moto?</h3>
     <h3>Vous etes au bon endroit</h3>
+    <form action="<%=motos_path%>" method="get">
     <div class="row bg-white py-3 my-3">
       <div class= "col-4">
-      <form action="<%= motos_path %>" method="get">
         <div class= "label-input" >
               <label for="geo">Départ et lieu de retour</label>
               <input type="text" name="q" value = "" id="geo"/>
@@ -26,11 +26,10 @@
                 min="2023-06-07T00:00" max="2023-06-14T00:00">
         </div>
       </div>
-
       <div >
         <input type="submit" value="Rechercher" class="home-submit">
       </div>
-      </form>
     </div>
+    </form>
   </div>
 </div>
