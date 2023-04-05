@@ -32,9 +32,13 @@
 
       const icone = document.querySelector(".icone");
       const form = document.querySelector(".form")
+      const btnEdit = document.querySelector(".btn-edit")
       icone.onclick=(event) => {
         event.preventDefault();
         form.classList.remove("d-none");
+      }
+      btnEdit.onclick = () => {
+        window.location.reload();
       }
     </script>
   </body>
