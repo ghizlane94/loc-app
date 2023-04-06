@@ -11,20 +11,19 @@
         </div>
       </div>
       <div class= "col-4">
-        <div class= "label-input">
+        <div class="label-input">
           <label for="start-time">Date et heure:</label>
-          <input type="datetime-local" id="start-time"
-                name="meeting-time" value="2023-06-12T19:30"
-                min="2023-06-07T00:00" max="2023-06-14T00:00">
-        </div>
+          <input type="datetime-local" id="start-time" name="reservation[start]" value="<%= @reservation.start%>"
+         min="2023-06-07T00:00" max="2023-06-14T00:00">
+      </div>
       </div>
       <div class= "col-4">
-        <div class= "label-input">
+        <div class="label-input">
           <label for="fin-time">Date et heure:</label>
-          <input type="datetime-local" id="fin-time"
-                name="meeting-time" value="2023-06-12T19:30"
-                min="2023-06-07T00:00" max="2023-06-14T00:00">
-        </div>
+          <input type="datetime-local" id="fin-time" name="reservation[end]" value="<%= @reservation.end %>"
+         min="2023-06-07T00:00" max="2023-06-14T00:00">
+      </div>
+
       </div>
       <div >
         <input type="submit" value="Rechercher" class="home-submit">
