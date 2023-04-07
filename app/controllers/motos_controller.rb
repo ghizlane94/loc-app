@@ -11,6 +11,7 @@ class MotosController < ApplicationController
 
   def show
     # authorize @moto
+    @reservation=Reservation.new
   end
 
   def new
