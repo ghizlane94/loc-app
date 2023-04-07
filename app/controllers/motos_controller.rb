@@ -11,6 +11,8 @@ class MotosController < ApplicationController
 
   def show
     # authorize @moto
+    @moto = Moto.find(params[:id])
+    # @reservations = @moto.reservations.order(:start_time)
   end
 
   def new

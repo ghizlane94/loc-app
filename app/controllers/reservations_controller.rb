@@ -4,17 +4,20 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation= Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
   end
 
   def new
     @reservation = Reservation.new
+    # @moto = Moto.find(params[:moto_id])
+    # @reservation = Reservation.new(moto_id: @moto.id)
+    # @reservations = @moto.reservations.order(:start_time)
   end
 
   def create
     resa = Reservation.new(
-      start: params[:reservation][:start],
-      end: params[:reservation][:end],
+      start_time: params[:reservation][:start_time],
+      end_time: params[:reservation][:end_time],
       moto_id: params[:moto_id]
     )
     # resa.save()
