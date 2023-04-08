@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @motos = policy_scope(Moto)
-    @reservation =Reservation.new
+    @reservation = Reservation.new
+    @reservation.save
   end
 end
