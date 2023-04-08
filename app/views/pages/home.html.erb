@@ -13,14 +13,14 @@
       <div class= "col-4">
         <div class="label-input">
           <label for="start-time">Date et heure:</label>
-          <input type="datetime-local" id="start-time" name="reservation[start]" value="<%= @reservation.start%>"
+          <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
          min="2023-06-07T00:00" max="2023-06-14T00:00">
       </div>
       </div>
       <div class= "col-4">
         <div class="label-input">
           <label for="fin-time">Date et heure:</label>
-          <input type="datetime-local" id="fin-time" name="reservation[end]" value="<%= @reservation.end %>"
+          <input type="datetime-local" id="fin-time" name="reservation[end_time]" value="<%= @reservation.end_time %>"
          min="2023-06-07T00:00" max="2023-06-14T00:00">
       </div>
 
