@@ -3,7 +3,7 @@ class Reservation < ApplicationRecord
   belongs_to :moto
   validates :start_time, :end_time, presence: true
   validate :end_time_after_start_time
-  validate :no_overlapping_reservations
+  # validate :no_overlapping_reservations
 
   def end_time_after_start_time
     if end_time.present? && start_time.present? && end_time <= start_time
