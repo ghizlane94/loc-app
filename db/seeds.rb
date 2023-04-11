@@ -57,7 +57,8 @@ moto1 = Moto.create!(
   mileage: 5000,
   image_url: "https://cdp.azureedge.net/products/USA/HD/2021/MC/CRUISER/STREET_BOB_114/50/VIVID_BLACK/2000000013.jpg",
   title: "Harley-Davidson Street Bob",
-  city: "New York"
+  city: "New York",
+  status: "completed on #{rand(DateTime.parse('2023-04-11 12:30:50')..DateTime.parse('2023-05-30 17:30:50')).strftime('%Y-%m-%d %H:%M:%S')}"
 )
 
 moto2 = Moto.create!(
@@ -70,7 +71,8 @@ moto2 = Moto.create!(
   mileage: 1000,
   image_url: "https://www.hondashop.com.au/wp-content/uploads/2018/06/CB300R-Red-02.jpg",
   title: "Honda CB300R",
-  city: "Los Angeles"
+  city: "Los Angeles",
+  status: "completed on #{rand(DateTime.parse('2023-04-11 12:30:50')..DateTime.parse('2023-05-30 17:30:50')).strftime('%Y-%m-%d %H:%M:%S')}"
 )
 
 moto3 = Moto.create!(
@@ -83,7 +85,8 @@ moto3 = Moto.create!(
   mileage: 1500.00,
   image_url: "https://media.motoservices.com/media/cache/facebook_share/media/vehicle/2459/p90402247-highres.jpg",
   title: "BMW R1200RT",
-  city: "Chicago"
+  city: "Chicago",
+  status: "completed on #{rand(DateTime.parse('2023-04-11 12:30:50')..DateTime.parse('2023-05-30 17:30:50')).strftime('%Y-%m-%d %H:%M:%S')}"
 )
 
 moto4 = Moto.create!(
@@ -96,7 +99,8 @@ moto4 = Moto.create!(
   mileage: 8000,
   image_url: "https://moto-station.com/wp-content/uploads/2017/11/02-SCRAMBLER-1100-YELLOW-1-768x513.jpg",
   title: "Ducati Monster 821",
-  city: "San Francisco"
+  city: "San Francisco",
+  status: "completed on #{rand(DateTime.parse('2023-04-11 12:30:50')..DateTime.parse('2023-05-30 17:30:50')).strftime('%Y-%m-%d %H:%M:%S')}"
 )
 
 moto5 = Moto.create!(
@@ -109,7 +113,8 @@ moto5 = Moto.create!(
   mileage: 1200.00,
   image_url: "https://cdn1.polaris.com/globalassets/indian/2016/model/vehicle-cards/scout-silver-smoke.jpg?v=53e30dff&format=webp",
   title: "Indian Scout Sixty",
-  city: "Miami"
+  city: "Miami",
+  status: "completed on #{rand(DateTime.parse('2023-04-11 12:30:50')..DateTime.parse('2023-05-30 17:30:50')).strftime('%Y-%m-%d %H:%M:%S')}"
 )
 
 puts "seeds planted 😊"
