@@ -13,22 +13,31 @@
       <div class="style">
         <p>Départ</p>
         <p>Lyon Part Dieu Gare</p>
+<<<<<<< HEAD
         <p>2023-03-28 - 15:00</p>
 
         <%# <% @reservations.each do |reservation| %>
         <%# <p>Start time: <%= reservation.start_time</p> %>
         <%# <% end %>
 
+=======
+
+        <%# <p><%= @start_time%>
+>>>>>>> master
       </div>
       <div class="style">
         <p>Retour</p>
         <p>Lyon Part Dieu Gare</p>
+<<<<<<< HEAD
         <p>2023-03-28 - 15:00</p>
 
         <%# <% @reservations.each do |reservation| %>
         <%# <p>Start time: <%= reservation.end_time</p> %>
         <%# <% end %>
 
+=======
+        <%# <p><%= @end_time%>
+>>>>>>> master
       </div>
     </div>
   </div>
@@ -99,3 +108,12 @@
     <input type="submit" value="Submit" class ="submit">
   </form>
 </div>
+<form action="<%=moto_reservations_path(@moto, @reservation)%>" method="post">
+  <label for="start-time">Date et heure:</label>
+  <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
+  min= "<%= (Time.now + 1.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>">
+
+  <label for="fin-time">Date et heure:</label>
+  <input type="datetime-local" id="fin-time" name="reservation[end_time]" value="<%= @reservation.end_time %>" min="<%= (Time.now + 2.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>" >
+  <input type="submit" value="reserver" class="home-submit">
+</form>

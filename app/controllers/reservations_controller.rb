@@ -1,10 +1,13 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @reservations = policy_scope(Reservation.all)
   end
 
   def show
     @reservation = Reservation.find(params[:id])
+    @start_time = @reservation.start_time
+    @end_time = @reservation.end_time
+    authorize @reservation
   end
 
   def new
@@ -15,13 +18,14 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    resa = Reservation.new(
+    @reservation = Reservation.new(
       start_time: params[:reservation][:start_time],
       end_time: params[:reservation][:end_time],
       moto_id: params[:moto_id]
     )
+    authorize @reservation
     # resa.save()
-    resa.user = current_user
-    redirect_to reservation_path(resa) if resa.save!
+    @reservation.user = current_user
+    redirect_to reservation_path(@reservation) if @reservation.save!
   end
 end

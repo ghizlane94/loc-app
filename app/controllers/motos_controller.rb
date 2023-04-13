@@ -11,8 +11,10 @@ class MotosController < ApplicationController
 
   def show
     # authorize @moto
-    @moto = Moto.find(params[:id])
-    # @reservations = @moto.reservations.order(:start_time)
+    @reservation = Reservation.new
+    # @reservation = Reservation.find(params[:id])
+    # @start_time = @reservation.start_time
+    # @end_time = @reservation.end_time
   end
 
   def new
@@ -58,7 +60,7 @@ class MotosController < ApplicationController
   end
 
   def moto_params
-    params.require(:moto).permit(:title, :description, :price, :brand, :color, :year, :mileage, :image_url)
+    params.require(:moto).permit(:title, :description, :price, :brand, :color, :status, :year, :mileage, :image_url)
   end
 
 end
