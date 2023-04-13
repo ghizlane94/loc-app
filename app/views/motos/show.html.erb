@@ -13,31 +13,13 @@
       <div class="style">
         <p>Départ</p>
         <p>Lyon Part Dieu Gare</p>
-<<<<<<< HEAD
-        <p>2023-03-28 - 15:00</p>
-
-        <%# <% @reservations.each do |reservation| %>
-        <%# <p>Start time: <%= reservation.start_time</p> %>
-        <%# <% end %>
-
-=======
 
         <%# <p><%= @start_time%>
->>>>>>> master
       </div>
       <div class="style">
         <p>Retour</p>
         <p>Lyon Part Dieu Gare</p>
-<<<<<<< HEAD
-        <p>2023-03-28 - 15:00</p>
-
-        <%# <% @reservations.each do |reservation| %>
-        <%# <p>Start time: <%= reservation.end_time</p> %>
-        <%# <% end %>
-
-=======
         <%# <p><%= @end_time%>
->>>>>>> master
       </div>
     </div>
   </div>
@@ -91,7 +73,7 @@
     </div>
   </div>
 </div>
-<div class="conducteur">
+<%# <div class="conducteur">
   <h3>Details conducteur</h3>
   <form action="" id="inputs">
     <label for="">First name</label>
@@ -107,7 +89,7 @@
     <br>
     <input type="submit" value="Submit" class ="submit">
   </form>
-</div>
+</div> %>
 <form action="<%=moto_reservations_path(@moto, @reservation)%>" method="post">
   <label for="start-time">Date et heure:</label>
   <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
