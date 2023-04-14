@@ -73,6 +73,27 @@
     </div>
   </div>
 </div>
+
+
+<div id = "rev" class ="container">
+
+  <div class ="form-reviews">
+      <h2>Reviews:</h2>
+      <%= simple_form_for [@moto, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit "Submit review" %>
+      <% end %>
+  </div>
+  <div class ="reviews mt-5">
+    <ul>
+      <%@moto.reviews.each do |review| %>
+        <li><%= review.content %> <%= review.rating %> <i class="fa-solid fa-star"></i></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
 <%# <div class="conducteur">
   <h3>Details conducteur</h3>
   <form action="" id="inputs">

@@ -1,29 +1,35 @@
 class ReviewsController < ApplicationController
+
+  def index
+    @moto = Moto.find(params["moto_id"])
+    @reviews = policy_scope(Review.all)
+
+  end
+
   def new
-    @review = Review.new
   end
 
   def create
+
     @review = Review.new(review_params)
-    @review.user_id = current_user.id
-    @review.moto_id = params["moto_id"]
     @moto = Moto.find(params["moto_id"])
+    @review.moto = @moto
 
+    authorize @review
+
+    @review.user_id = current_user.id
     if @review.save
-
-      respond_to do |format|
-        format.html { redirect_to moto_reviews_path(@review.moto_id), notice: 'review was successfully created.' }
-        format.text { render partial: "motos/reviews", locals: { moto: @moto }, formats: [:html] }
-      end
+      redirect_to moto_path(@moto)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content, :moto_id)
+    params.require(:review).permit(:content, :rating)
   end
 
 end
