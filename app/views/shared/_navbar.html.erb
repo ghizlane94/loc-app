@@ -47,17 +47,19 @@
     </div>
   </div>
 </div>
-<script>
+<script >
 console.log("iam in navbar")
+  document.addEventListener("DOMContentLoaded", () => {
     const searchBtnNew=document.querySelector(".search-btn");
-      const searchBox =document.querySelector(".search-box");
-      const cancelBtn = document.querySelector(".cancel-btn");
-      searchBtnNew.onclick =() => {
-        searchBox.classList.add("active");
-        cancelBtn.style.visibility="visible";
-      }
-      cancelBtn.onclick =() => {
-        searchBox.classList.remove("active");
-        cancelBtn.style.visibility="hidden";
-      }
+    const searchBox =document.querySelector(".search-box");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    searchBtnNew.onclick =() => {
+      searchBox.classList.add("active");
+      cancelBtn.style.visibility="visible";
+    }
+    cancelBtn.onclick =() => {
+      searchBox.classList.remove("active");
+      cancelBtn.style.visibility="hidden";
+    }
+  })
 </script>

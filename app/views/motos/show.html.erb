@@ -96,3 +96,39 @@
     </div>
   </form>
 </div>
+ <script >
+
+      // edit
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("iam in show")
+        const icone = document.querySelector(".icone");
+        const form = document.querySelector(".form")
+        const btnEdit = document.querySelector(".btn-edit")
+        if(icone){
+          icone.onclick=() => {
+            form.classList.remove("d-none");
+          }
+          btnEdit.onclick = () => {
+            window.location.reload();
+          }
+        }
+      })
+      // reservation
+      document.addEventListener("DOMContentLoaded", () => {
+        const availBtn =document.querySelector(".avail-btn");
+        const firstDiv=document.querySelector(".first-div");
+        const divReservation =document.querySelector(".div-reservation")
+        function handleClick(){
+          firstDiv.style.opacity="0.1";
+          divReservation.style.display='';
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+        if(availBtn){
+          availBtn.addEventListener("click", handleClick);
+        }
+      });
+
+    </script>
