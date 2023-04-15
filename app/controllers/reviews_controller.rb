@@ -1,18 +1,21 @@
 class ReviewsController < ApplicationController
 
   def index
-    @moto = Moto.find(params["moto_id"])
+    @moto = Moto.find(params[:moto_id])
     @reviews = policy_scope(Review.all)
 
   end
 
   def new
+    # @moto = Moto.find(params[:moto_id])
+    # @review = Review.new
+    # redirect_to moto_path(@moto)
   end
 
   def create
 
     @review = Review.new(review_params)
-    @moto = Moto.find(params["moto_id"])
+    @moto = Moto.find(params[:moto_id])
     @review.moto = @moto
 
     authorize @review
@@ -20,10 +23,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     if @review.save
       redirect_to moto_path(@moto)
-    else
-      render :new, status: :unprocessable_entity
     end
-
   end
 
   private
