@@ -12,6 +12,9 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    # @moto = Moto.find(params[:moto_id])
+    # @reservation = Reservation.new(moto_id: @moto.id)
+    # @reservations = @moto.reservations.order(:start_time)
   end
 
   def create
