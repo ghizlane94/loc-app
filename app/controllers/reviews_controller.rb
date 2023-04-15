@@ -24,6 +24,15 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to moto_path(@moto)
     end
+
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    authorize @review
+    redirect_to moto_path(@review.moto), status: :see_other
+
   end
 
   private

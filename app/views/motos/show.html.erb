@@ -88,7 +88,7 @@
   <div class ="reviews mt-5">
     <ul>
       <%@moto.reviews.each do |review| %>
-        <li><%= review.content %> <%= review.rating %> <i class="fa-solid fa-star"></i></li>
+        <li><%= review.content %> <%= review.rating %> <i class="fa-solid fa-star"></i> <%= link_to "Delete",  review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
       <% end %>
     </ul>
   </div>

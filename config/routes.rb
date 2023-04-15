@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :motos do
-    resources :reservations, only: [:create, :new]
-    resources :reviews, only: %i[new create index]
+    resources :reservations, only: %i[create new]
+    resources :reviews, only: %i[new create]
   end
-  resources :reservations, only: [:index, :show]
+  resources :reservations, only: %i[index show]
+  resources :reviews, only: [:destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # resources :motos
   # Defines the root path route ("/")
