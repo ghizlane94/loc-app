@@ -10,6 +10,7 @@
   .label-input{
     display: flex;
     flex-direction: column;
+
   }
   .home-submit{
     background-color: #6B63FF;
@@ -17,8 +18,25 @@
     margin-top:10px;
     padding: 5px;
     border: none;
-
-
   }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
 
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #f2f2f2;
+}
 }

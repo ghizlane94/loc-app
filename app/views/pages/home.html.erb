@@ -5,9 +5,10 @@
     <form action="<%=motos_path%>" method="get">
     <div class="row bg-white py-3 my-3">
       <div class= "col-4">
-        <div class= "label-input" >
+        <div class= "label-geo" >
               <label for="geo">Départ et lieu de retour</label>
               <input type="text" name="q" value = "" id="geo"/>
+              <ul id="results"></ul>
         </div>
       </div>
       <div class= "col-4">
@@ -33,3 +34,25 @@
     </form>
   </div>
 </div>
+<script>
+// TODO: Autocomplete the input with AJAX calls.
+
+const results = document.querySelector("#results");
+const geo = document.querySelector("#geo");
+
+const drawResponseList = (data) => {
+  results.innerHTML = '';
+  data.words.forEach((word) => {
+    results.insertAdjacentHTML('beforeend', `<li>${word}</li>`);
+  });
+};
+
+const autocomplete = (e) => {
+  fetch(`https://wagon-dictionary.herokuapp.com/autocomplete/${e.target.value}`)
+    .then(response => response.json())
+    .then(data => drawResponseList(data));
+};
+
+geo.addEventListener('keyup', autocomplete);
+
+</script>
