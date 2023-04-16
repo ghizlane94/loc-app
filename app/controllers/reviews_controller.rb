@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+before_action :set_review, only: %i[edit update destroy]
 
   def index
     @moto = Moto.find(params[:moto_id])
@@ -27,15 +28,32 @@ class ReviewsController < ApplicationController
 
   end
 
+  def edit
+    authorize @review
+  end
+
+  def update
+    authorize @review
+    if @review.update(review_params)
+      redirect_to moto_path(@review.moto), notice: "Review was successfully updated."
+    else
+      render :edit
+    end
+  end
+
+
   def destroy
-    @review = Review.find(params[:id])
     @review.destroy
     authorize @review
-    redirect_to moto_path(@review.moto), status: :see_other
+    redirect_to moto_path(@review.moto), notice: "Review was successfully deleted.", status: :see_other
 
   end
 
   private
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
 
   def review_params
     params.require(:review).permit(:content, :rating)
