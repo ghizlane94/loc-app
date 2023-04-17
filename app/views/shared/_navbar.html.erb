@@ -10,15 +10,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav me-auto">
-      <form action="<%=motos_path%>" method="get" data-controller="search-bar">
+      <form action="<%=motos_path%>" method="get" >
           <li class= "btn-margin">
-            <div class="search-box" >
-              <input type="text" name="q" placeholder="Search..." data-search-bar-target="box">
+            <div class="search-box" data-controller="search-bar" data-search-bar-target="box">
+              <input type="text" name="q" placeholder="Search..." >
               <div class="search-btn">
-                <i class="fa-solid fa-magnifying-glass" data-action="click->search-bar#search" data-search-bar-target="search-btn"></i>
+                <i class="fa-solid fa-magnifying-glass" data-action="click->search-bar#search" data-search-bar-target="searchBtn"></i>
               </div>
-              <div class="cancel-btn">
-                <i class="fa-solid fa-xmark" data-action="click->search-bar#cancel" data-search-bar-target="cancel-btn"></i>
+              <div class="cancel-btn" data-search-bar-target="cancelBtn">
+                <i class="fa-solid fa-xmark" data-action="click->search-bar#cancel"></i>
               </div>
             </div>
           </li>

@@ -2,16 +2,18 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["box", "searchBtn", "cancelBtn"]
+
+
   connect() {
     console.log("Hello from our first Stimulus controller")
   }
   search(){
     console.log("hello")
-    this.BoxTarget.classList.add("active");
+    this.boxTarget.classList.add("active");
     this.cancelBtnTarget.style.visibility="visible";
   }
   cancel(){
-    this.BoxTarget.classList.remove("active");
+    this.boxTarget.classList.remove("active");
     this.cancelBtnTarget.style.visibility="hidden";
   }
 }
