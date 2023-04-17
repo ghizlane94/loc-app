@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+  position: relative;
   .moto-img {
     height: 90px;
     width: 90px;
@@ -117,6 +117,9 @@
 
 }
 .avail-btn{
+  position:absolute;
+  top:610px;
+  right: 15px;
   margin: 0 50px;
   background-color: white;
   border: #6b63ff 1px solid;
