@@ -1,0 +1,8 @@
+<div class="container" id="rev">
+<%= simple_form_for @review, url: review_path(@review), method: :patch do |f| %>
+  <%= f.input :content, label: "Content" %>
+  <%= f.input :rating, label: "Rating", input_html: { min: 1, max: 5 } %>
+
+  <%= f.submit "Update Review" %>
+<% end %>
+</div>

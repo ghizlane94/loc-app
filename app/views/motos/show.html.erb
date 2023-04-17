@@ -81,14 +81,14 @@
       <h2>Reviews:</h2>
       <%= simple_form_for [@moto, @review] do |f| %>
       <%= f.input :content %>
-      <%= f.input :rating %>
+      <%= f.input :rating, input_html: { min: 1, max: 5 }%>
       <%= f.submit "Submit review" %>
       <% end %>
   </div>
   <div class ="reviews mt-5">
     <ul>
       <%@moto.reviews.each do |review| %>
-        <li><%= review.content %> <%= review.rating %> <i class="fa-solid fa-star"></i></li>
+        <li><%= review.content %> <%= review.rating %> <i class="fa-solid fa-star"></i> <%= link_to "Delete",  review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> <%= link_to "Update", edit_review_path(review) %></li>
       <% end %>
     </ul>
   </div>
