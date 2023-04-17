@@ -1,79 +1,103 @@
-<div class="first-div">
-  <div class="second-div">
-    <h3>Vehicule</h3>
-    <div class="img-moto">
-      <%# <img src="https://www.moto-honda.re/publicmedia/formatted/116/76/fr/X-ADV-Gris-mat.jpg;h=486,w=864.jpg" alt=""> %>
-      <%= image_tag @moto.image_url, fit: :crop, class: "moto-img" %>
-      <h4><%= @moto.title %></h4>
-    </div>
-    <br>
-    <h3> Depart & retour</h3>
-    <br>
-    <div>
-      <div class="style">
-        <p>Départ</p>
-        <p>Lyon Part Dieu Gare</p>
+<div data-controller="reservation">
+  <div class="first-div" data-reservation-target="firstDiv">
+    <div class="second-div">
+        <h3>Vehicule</h3>
+        <div class="img-moto">
+          <%# <img src="https://www.moto-honda.re/publicmedia/formatted/116/76/fr/X-ADV-Gris-mat.jpg;h=486,w=864.jpg" alt=""> %>
+          <%= image_tag @moto.image_url, fit: :crop, class: "moto-img" %>
+          <h4><%= @moto.title %></h4>
+        </div>
+        <br>
+        <h3> Depart & retour</h3>
+        <br>
+        <div>
+          <div class="style">
+            <p>Départ</p>
+            <p>Lyon Part Dieu Gare</p>
 
-        <%# <p><%= @start_time%>
+            <%# <p><%= @start_time%>
+          </div>
+          <div class="style">
+            <p>Retour</p>
+            <p>Lyon Part Dieu Gare</p>
+            <%# <p><%= @end_time%>
+          </div>
       </div>
-      <div class="style">
-        <p>Retour</p>
-        <p>Lyon Part Dieu Gare</p>
-        <%# <p><%= @end_time%>
+      </div>
+    <div class="third-div" data-controller="edit">
+      <div class="space">
+        <p>Price</p>
+        <p><%= @moto.price %> Mad</p>
+      </div>
+      <hr>
+      <div class="space">
+        <p>Mileage</p>
+        <p><%= @moto.mileage %> Km</p>
+      </div>
+      <hr>
+      <div class="space">
+        <p>Model</p>
+        <p><%= @moto.year %></p>
+      </div>
+      <hr>
+      <div class="space">
+        <p>Color</p>
+        <p><%= @moto.color %></p>
+      </div>
+      <hr>
+      <div class="links">
+        <div >
+          <% if policy(@moto).destroy? %>
+            <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class:"btn-link" %>
+          <% end %>
+        </div>
+        <div>
+          <% if policy(@moto).edit? %>
+            <%# <%= link_to "Edit", edit_moto_path, class:"btn-link" %>
+            <i class="fa-solid fa-pen-to-square icone"  data-action="click->edit#display"></i>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <div class="d-none container form" data-edit-target="form">
+          <%= simple_form_for(@moto) do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description %>
+            <%= f.input :color %>
+            <%= f.input :brand %>
+            <%= f.input :mileage %>
+            <%= f.input :year %>
+            <%= f.input :price %>
+            <%= f.submit 'Update', class: 'btn-edit' %>
+          <% end %>
+        </div>
       </div>
     </div>
+
   </div>
-  <div class="third-div">
-    <div class="space">
-      <p>Price</p>
-      <p><%= @moto.price %> Mad</p>
-    </div>
-    <hr>
-    <div class="space">
-      <p>Mileage</p>
-      <p><%= @moto.mileage %> Km</p>
-    </div>
-    <hr>
-    <div class="space">
-      <p>Model</p>
-      <p><%= @moto.year %></p>
-    </div>
-    <hr>
-    <div class="space">
-      <p>Color</p>
-      <p><%= @moto.color %></p>
-    </div>
-    <hr>
-    <div class="links">
-      <div>
-        <% if policy(@moto).destroy? %>
-          <%= button_to "Delete", moto_path(@moto), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class:"btn-link" %>
-        <% end %>
+
+  <div >
+    <button class="avail-btn" data-action="click->reservation#resa">Availability</button>
+  </div>
+
+  <div class="big-div" >
+    <form action="<%=moto_reservations_path(@moto, @reservation)%>" method="post"     class="div-reservation" style="display:none;" data-reservation-target="divReservation">
+
+      <div class="start-input">
+        <label for="start-time">Date et heure:</label>
+        <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
+      min= "<%= (Time.now + 1.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>">
       </div>
-      <div>
-        <% if policy(@moto).edit? %>
-          <%# <%= link_to "Edit", edit_moto_path, class:"btn-link" %>
-          <i class="fa-solid fa-pen-to-square icone" ></i>
-        <% end %>
+      <div class="end-input">
+        <label for="fin-time">Date et heure:</label>
+        <input type="datetime-local" id="fin-time" name="reservation[end_time]" value="<%= @reservation.end_time %>" min="<%= (Time.now + 2.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>" >
       </div>
-    </div>
-    <div>
-      <div class="d-none container form" >
-        <%= simple_form_for(@moto) do |f| %>
-          <%= f.input :title %>
-          <%= f.input :description %>
-          <%= f.input :color %>
-          <%= f.input :brand %>
-          <%= f.input :mileage %>
-          <%= f.input :year %>
-          <%= f.input :price %>
-          <%= f.submit 'Update', class: 'btn-edit' %>
-        <% end %>
+      <div class="submit">
+        <input type="submit" value="Reserver" class="home-submit">
       </div>
-    </div>
+    </form>
   </div>
 </div>
-
 
 <div id = "rev" class ="container">
 
@@ -94,29 +118,5 @@
   </div>
 
 </div>
-<%# <div class="conducteur">
-  <h3>Details conducteur</h3>
-  <form action="" id="inputs">
-    <label for="">First name</label>
-    <input type="text" name="" id="">
-    <label for="">Last name</label>
-    <input type="text" name="" id="">
-    <label for="">Date of birth</label>
-    <input type="date" name="" id="">
-    <label for="">Email</label>
-    <input type="email" name="" id="">
-    <label for="">Phone number</label>
-    <input type="tel">
-    <br>
-    <input type="submit" value="Submit" class ="submit">
-  </form>
-</div> %>
-<form action="<%=moto_reservations_path(@moto, @reservation)%>" method="post">
-  <label for="start-time">Date et heure:</label>
-  <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
-  min= "<%= (Time.now + 1.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>">
 
-  <label for="fin-time">Date et heure:</label>
-  <input type="datetime-local" id="fin-time" name="reservation[end_time]" value="<%= @reservation.end_time %>" min="<%= (Time.now + 2.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>" >
-  <input type="submit" value="reserver" class="home-submit">
-</form>
+

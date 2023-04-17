@@ -68,6 +68,67 @@
   }
 
 }
+.big-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .div-reservation{
+    border: 1px solid rgb(178, 176, 176);
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    margin: 50px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .start-input{
+      display: flex;
+      flex-direction: column;
+      padding: 7px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .end-input{
+      display: flex;
+      flex-direction: column;
+      padding: 7px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .submit{
+      padding: 7px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .home-submit{
+        background-color: white;
+        border:#6b63ff 1px solid;
+        color:#6b63ff;
+        border-radius: 4px;
+        padding: 6px;
+        &:hover{
+        background-color: #6b63ff;
+        border:none;
+        color:white;
+
+        }
+      }
+    }
+  }
+
+}
+.avail-btn{
+  margin: 0 50px;
+  background-color: white;
+  border: #6b63ff 1px solid;
+  color:#6b63ff ;
+  border-radius: 5px;
+  &:hover{
+    background-color: #6b63ff;
+    color: white;
+  }
+}
+
+// we need to check this css
 .conducteur{
   border: 1px solid rgb(178, 176, 176);
   border-radius: 15px;
