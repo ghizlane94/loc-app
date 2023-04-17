@@ -10,6 +10,8 @@ puts "destroying motos "
 Moto.destroy_all
 puts "destroting users"
 User.destroy_all
+puts "destroying reviews"
+Review.destroy_all
 
 puts "Creating users"
 
@@ -116,5 +118,26 @@ moto5 = Moto.create!(
   city: "Miami",
   status: "completed on #{rand(DateTime.parse('2023-04-11 12:30:50')..DateTime.parse('2023-05-30 17:30:50')).strftime('%Y-%m-%d %H:%M:%S')}"
 )
+puts "creating reviews"
+
+  Review.create(content: "Great bike!", rating: 4.5, user: user1, moto: moto1)
+  Review.create(content: "Smooth ride, would recommend.", rating: 4.2, user: user2, moto: moto1)
+  Review.create(content: "Good value for the price.", rating: 3.8, user: user3, moto: moto1)
+
+  Review.create(content: "Powerful and fun to ride!", rating: 4.8, user: user1, moto: moto2)
+  Review.create(content: "Not the most comfortable ride, but still enjoyable.", rating: 3.9, user: user2, moto: moto2)
+  Review.create(content: "Loud exhaust, but lots of power.", rating: 4.5, user: user3, moto: moto2)
+
+  Review.create(content: "Sleek design and great handling.", rating: 4.6, user: user1, moto: moto3)
+  Review.create(content: "Smooth ride and good gas mileage.", rating: 4.1, user: user2, moto: moto3)
+  Review.create(content: "Not the most powerful bike, but still fun to ride.", rating: 3.7, user: user3, moto: moto3)
+
+  Review.create(content: "Good for off-road riding.", rating: 4.2, user: user1, moto: moto4)
+  Review.create(content: "Lightweight and nimble, great for tight turns.", rating: 4.4, user: user2, moto: moto4)
+  Review.create(content: "Good for beginners, easy to handle.", rating: 3.9, user: user3, moto: moto4)
+
+  Review.create(content: "Fast and agile, great for track riding.", rating: 4.9, user: user1, moto: moto5)
+  Review.create(content: "Not the most comfortable ride for long distances, but great for short rides.", rating: 4.2, user: user2, moto: moto5)
+  Review.create(content: "Expensive, but worth it for the performance.", rating: 4.7, user: user3, moto: moto5)
 
 puts "seeds planted 😊"

@@ -1,0 +1,59 @@
+#rev {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .form-reviews {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .form-reviews h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+
+  .form-reviews input[type="text"],
+  .form-reviews select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .form-reviews input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .form-reviews input[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+
+  .reviews ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reviews li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .reviews li i.fa-star {
+    color: #f1c40f;
+    margin-left: 5px;
+  }
+
+}
