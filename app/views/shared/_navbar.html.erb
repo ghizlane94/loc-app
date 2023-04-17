@@ -10,9 +10,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav me-auto">
-      <form action="<%=motos_path%>" method="get">
+      <form action="<%=motos_path%>" method="get" data-controller="search-bar">
           <li class= "btn-margin">
-            <div class="search-box" data-controller="search-bar">
+            <div class="search-box" >
               <input type="text" name="q" placeholder="Search..." data-search-bar-target="box">
               <div class="search-btn">
                 <i class="fa-solid fa-magnifying-glass" data-action="click->search-bar#search" data-search-bar-target="search-btn"></i>
