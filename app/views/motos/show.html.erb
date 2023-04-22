@@ -8,18 +8,16 @@
           <h4><%= @moto.title %></h4>
         </div>
         <br>
-        <h3> Depart & retour</h3>
         <br>
         <div>
           <div class="style">
-            <p>Départ</p>
-            <p>Lyon Part Dieu Gare</p>
-
-            <%# <p><%= @start_time%>
+            <p>Description:</p>
+            <p><%= @moto.description %></p>
+            <%# <p><%= @end_time%>
           </div>
           <div class="style">
-            <p>Retour</p>
-            <p>Lyon Part Dieu Gare</p>
+            <p>Availability:</p>
+            <p><%= @moto.status %></p>
             <%# <p><%= @end_time%>
           </div>
       </div>
@@ -77,7 +75,7 @@
   </div>
 
   <div>
-    <button class="avail-btn" data-action="click->reservation#resa">Availability</button>
+    <button class="avail-btn" data-action="click->reservation#resa" data-reservation-target="buttonResa">Availability</button>
   </div>
 
   <div class="big-div" >
@@ -85,6 +83,7 @@
 
       <div class="start-input">
         <label for="start-time">Date et heure:</label>
+        <i class="fa-regular fa-rectangle-xmark cancel" data-action="click->reservation#back"></i>
         <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
       min= "<%= (Time.now + 1.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>">
       </div>
