@@ -110,10 +110,12 @@
   </div>
   <div class ="reviews mt-5">
     <ul>
+      <%if @average_rating %>
       <p>
         <%= "Rating: #{'★' * @average_rating}#{'☆' * (5 - @average_rating)}" %>
         <%= @average_rating %>
       </p>
+      <%end %>
 
       <%# <p>Average rating : <%= @average_rating %>
       <%@moto.reviews.each do |review| %>
