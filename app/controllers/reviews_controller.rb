@@ -4,6 +4,7 @@ before_action :set_review, only: %i[edit update destroy]
   def index
     @moto = Moto.find(params[:moto_id])
     @reviews = policy_scope(Review.all)
+    @average_rating = Review.average(:rating)
 
   end
 
