@@ -13,6 +13,7 @@ class MotosController < ApplicationController
     # authorize @moto
     @reservation = Reservation.new
     @review = Review.new
+    @average_rating = average_rating
     # @reservation = Reservation.find(params[:id])
     # @start_time = @reservation.start_time
     # @end_time = @reservation.end_time
