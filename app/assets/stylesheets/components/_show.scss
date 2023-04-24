@@ -87,6 +87,14 @@
       padding: 7px;
       margin-top: 10px;
       margin-bottom: 10px;
+      position: relative;
+      .cancel{
+        position: absolute;
+        top: -30px;
+        right: -20px;
+        font-size: 25px;
+        cursor: pointer;
+      }
     }
     .end-input{
       display: flex;
@@ -118,7 +126,7 @@
 }
 .avail-btn{
   position:absolute;
-  top:610px;
+  top:570px;
   right: 15px;
   margin: 0 50px;
   background-color: white;

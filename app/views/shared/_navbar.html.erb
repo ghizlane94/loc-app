@@ -15,7 +15,9 @@
             <div class="search-box" data-controller="search-bar" data-search-bar-target="box">
               <input type="text" name="q" placeholder="Search..." >
               <div class="search-btn">
+
                 <i class="fa-solid fa-magnifying-glass" data-action="click->search-bar#search" data-search-bar-target="searchBtn"></i>
+
               </div>
               <div class="cancel-btn" data-search-bar-target="cancelBtn">
                 <i class="fa-solid fa-xmark" data-action="click->search-bar#cancel"></i>
@@ -47,19 +49,3 @@
     </div>
   </div>
 </div>
-<%# <script >
-console.log("iam in navbar")
-  document.addEventListener("DOMContentLoaded", () => {
-    const searchBtnNew=document.querySelector(".search-btn");
-    const searchBox =document.querySelector(".search-box");
-    const cancelBtn = document.querySelector(".cancel-btn");
-    searchBtnNew.onclick =() => {
-      searchBox.classList.add("active");
-      cancelBtn.style.visibility="visible";
-    }
-    cancelBtn.onclick =() => {
-      searchBox.classList.remove("active");
-      cancelBtn.style.visibility="hidden";
-    }
-  })
-</script> %>
