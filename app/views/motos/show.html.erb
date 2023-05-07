@@ -71,7 +71,12 @@
         </div>
       </div>
     </div>
-
+     <%if @average_rating %>
+      <p>
+        <%= "Rating: #{'★' * @average_rating}#{'☆' * (5 - @average_rating)}" %>
+        <%= @average_rating %>
+      </p>
+      <%end %>
   </div>
 
   <div>
@@ -96,6 +101,7 @@
       </div>
     </form>
   </div>
+
 </div>
 
 <div id = "rev" class ="container">
@@ -108,20 +114,39 @@
       <%= f.submit "Submit review" %>
       <% end %>
   </div>
-  <div class ="reviews mt-5">
-    <ul>
-      <%if @average_rating %>
-      <p>
-        <%= "Rating: #{'★' * @average_rating}#{'☆' * (5 - @average_rating)}" %>
-        <%= @average_rating %>
-      </p>
-      <%end %>
-
       <%# <p>Average rating : <%= @average_rating %>
-      <%@moto.reviews.each do |review| %>
-        <li><%= review.content %> <%= review.rating %> <i class="fa-solid fa-star"></i> <%= link_to "Delete",  review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> <%= link_to "Update", edit_review_path(review) %></li>
-      <% end %>
-    </ul>
+</div>
+<section id="testimonials">
+
+  <div class="testimonial-heading">
+    <span>Reviews</span>
   </div>
 
-</div>
+  <div class="testimonial-box-container">
+  <%@moto.reviews.each do |review| %>
+    <div class="testimonial-box">
+      <div class="box-top">
+        <div class="profil">
+          <div class="profil-img">
+            <img src="https://oasys.ch/wp-content/uploads/2019/03/photo-avatar-profil.png" alt="">
+          </div>
+          <div class="name-user">
+            <strong><%= @user.email %></strong>
+          </div>
+        </div>
+        <div class="review">
+          <%=  "#{'★' * review.rating}#{'☆' * (5 - review.rating)}"%> <%= review.rating %>
+        </div>
+
+      </div>
+      <div class="client-comment">
+        <p><%= review.content %> </p>
+      </div>
+      <div>
+        <%= link_to "Delete",  review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> <%= link_to "Update", edit_review_path(review) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</section>
