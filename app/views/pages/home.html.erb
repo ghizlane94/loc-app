@@ -2,34 +2,13 @@
   <div class="container py-5" >
     <h3>Vous Cherchez une moto?</h3>
     <h3>Vous etes au bon endroit</h3>
+    <br>
+    <br>
     <form action="<%=motos_path%>" method="get">
-    <div class="row bg-white py-3 my-3">
-      <div class= "col-4">
-        <div class= "label-input" >
-              <label for="geo">Départ et lieu de retour</label>
-              <input type="text" name="q" value = "" id="geo"/>
-        </div>
+      <div class="input-group">
+        <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="q"/>
+        <button type="button" class="btn btn-outline-primary">search</button>
       </div>
-      <div class= "col-4">
-        <div class="label-input">
-          <label for="start-time">Date et heure:</label>
-          <input type="datetime-local" id="start-time" name="reservation[start_time]" value="<%= @reservation.start_time%>"
-         min= "<%= (Time.now + 1.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>">
-        </div>
-      </div>
-      <div class= "col-4">
-        <div class="label-input">
-          <label for="fin-time">Date et heure:</label>
-          <input type="datetime-local" id="fin-time" name="reservation[end_time]" value="<%= @reservation.end_time %>"
-         min="<%= (Time.now + 2.hour).strftime('%Y-%m-%dT%H:%M') %>" max = "<%= (Time.now + 1.month).strftime('%Y-%m-%dT%H:%M') %>">
-         <%# disabled= true %>
-      </div>
-
-      </div>
-      <div >
-        <input type="submit" value="Rechercher" class="home-submit">
-      </div>
-    </div>
     </form>
   </div>
 </div>
